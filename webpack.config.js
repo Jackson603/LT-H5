@@ -79,7 +79,8 @@ var config = {
 		alias: {
 			util : path.resolve(__dirname, 'src/util'),
 			"@": path.resolve(__dirname, 'src/page'),
-			node_modules: path.resolve(__dirname, 'node_modules')
+			node_modules: path.resolve(__dirname, 'node_modules'),
+			service: path.resolve(__dirname, 'src/service')
 		}	
 	},
 	

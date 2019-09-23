@@ -1,4 +1,23 @@
-.haha{
-	font-size: 30px;
-	color: blue;
+.nav{
+	background: #eee;
+	height: 30px;
+	line-height: 30px;
+}
+.nav .user{
+	float: left;  /*左浮动*/
+}
+.nav .user.login{
+	display: none;
+}
+.nav .user .link{
+	margin-right: 5px;
+}
+
+/*导航链接部分*/
+.nav .nav-list{
+	float: right;
+}
+.nav .nav-list .nav-item{
+	display: inline-block;  /*内联块*/
+	margin-left: 5px;
 }
