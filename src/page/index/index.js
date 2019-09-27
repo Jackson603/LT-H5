@@ -3,7 +3,21 @@ require('./index.css');
 
 require('@/common/nav-simple/index.js');
 require('@/common/nav/index.js');
+require('@/common/header/index.js');
 var _mm = require('util/mm.js');
+
+var navSide = require('@/common/nav-side/index.js');
+
+//测试个人中心页
+//navSide.init({
+//	name: 'user-center'
+//});
+
+//navSide.init({
+//	name: 'about'
+//});
+
+
 
 //_mm.request({
 //	//url: './xx.do',  //错误接口
@@ -25,3 +39,4 @@ var _mm = require('util/mm.js');
 //	data: 123
 //}
 //console.log(_mm.renderHtml(html,data));
+

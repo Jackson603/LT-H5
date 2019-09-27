@@ -2,7 +2,7 @@
 
 var _mm = require('util/mm.js');
 
-var _user = {
+var _cart = {
 	//1.登出
 	getCartCount: function(resolve, reject){
 		_mm.request({

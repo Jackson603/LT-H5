@@ -80,5 +80,5 @@ input[type='checkbox']{
 	border: 1px solid #ddd;
 	border-radius: 5px;
 	opacity: .5;
-	background: url("../../image/icon/loading.gif");
+	background: url("../../image/icon/loading.gif") no-repeat;
 }
