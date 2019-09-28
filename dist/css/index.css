@@ -1,5 +1,90 @@
 body{
-	width: 600px;
+	/*width: 1090px;
 	height: 500px;
-	background-image: url(/distresource/4xxxx.jpg);
+	/*background-color: yellowgreen;*/
+	
+	/*background-image: url('../../image/4xxxx.jpg');*/
+}
+.nav-simple{
+height: 60px;
+line-height: 60px;
+border-bottom: 1px solid;
+background: #FFFFFF;	
+}
+
+.nav-simple .logo{
+	font-size: 26px;
+	font-weight: bold;
+	color: #C60023;
+	text-decoration: none;
+}
+.nav{
+	background: #eee;
+	height: 30px;
+	line-height: 30px;
+}
+.nav .user{
+	float: left;  /*左浮动*/
+}
+.nav .user.login{
+	display: none;
+}
+.nav .user .link{
+	margin-right: 5px;
+}
+
+/*导航链接部分*/
+.nav .nav-list{
+	float: right;
+}
+.nav .nav-list .nav-item{
+	display: inline-block;  /*内联块*/
+	margin-left: 5px;
+}
+.header .logo{
+	position: absolute;  /*绝对定位的特征:不占文档流  相对定位，占文档流*/
+	/*position: relative;*/
+	left: 60px;
+	top: 34px;
+	/*显示成块级元素:独占一行*/
+	display: block;
+	font-size: 36px;
+	color: #C60023;
+	font-weight: bold;
+	text-decoration: none;
+}
+.header .search-con{
+	/*上----右----下---左*/
+	padding: 40px 0 30px 250px;
+}
+.header .search-con .search-input{
+	width: 550px;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 10px;
+	border: 2px solid #C60023;
+	outline: none;
+}
+.header .search-con .search-btn{
+	position: absolute;
+	height: 44px;
+	width: 80px;
+}
+.nav-side{
+	float: left;
+	width: 130px;
+	/*同时具有宽度和高度才不会闪*/
+	min-height: 100px;
+	/*background-color: #0000FF;*/
+}
+.nav-side .nav-item{
+	height: 25px;
+	line-height: 25px;
+	font-size: 13px;
+}
+.nav-side .nav-item .link{
+	color: #888;
+}
+.nav-side .nav-item.active .link{
+	color: #C60023;
 }
