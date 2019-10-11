@@ -14,14 +14,14 @@
 	line-height: 35px;
 	font-size: 14px;
 }
-.keywords-list .keywords-item: hover{
-	background: #999999;
+.keywords-list .keywords-item:hover{
+	background: #999;
 }
 .keywords-list .keywords-item .link{
 	padding-right: 6px;
 	color: #FFFFFF;
 }
-.keywords-list .keywords-item .link: hover{
+.keywords-list .keywords-item .link:hover{
 	color: #C60023;
 } 
 /* 右边的轮播图样式 */
@@ -51,19 +51,21 @@
 }
 .floor-wrap .floor-list{
 	margin-right: -20px;
+	/* [注意]overflow:hidden 有两层意思：
+	1.超出部分隐藏  2.清除浮动 */
 	overflow: hidden;
 }
 .floor-wrap .floor-item{
 	position: relative;
 	width: 200px;
 	height: 220px;
-	margin: 15px 20px 15px 0;
+	margin: 15px 15px 15px 3px;
 	float: left;
 	cursor: pointer;
 	background: #FFFFFF;
 }
-.floor-wrap .floor-item: hover{
-	box-shadow: 1px 1px 7px #DDDDDD;
+.floor-wrap .floor-item:hover{
+	box-shadow: 1px 1px 7px red;
 }
 .floor-wrap .floor-list .floor-item .floor-text{
 	position: absolute;
@@ -82,19 +84,19 @@
 }
 /* ================ */
 /* 更改各楼层标题颜色 */
-.floor-wrap: nth-child(2) .floor-title{
+.floor-wrap:nth-child(2) .floor-title{
 	color: #3B838C;
 	border-bottom: 1px solid #3B838C;
 }
-.floor-wrap: nth-child(3) .floor-title{
+.floor-wrap:nth-child(3) .floor-title{
 	color: #A93931;
 	border-bottom: 1px solid #A93931;
 }
-.floor-wrap: nth-child(4) .floor-title{
+.floor-wrap:nth-child(4) .floor-title{
 	color: #488BAD;
 	border-bottom: 1px solid #488BAD;
 }
-.floor-wrap: nth-child(5) .floor-title{
+.floor-wrap:nth-child(5) .floor-title{
 	color: #642663;
 	border-bottom: 1px solid #642663;
 }

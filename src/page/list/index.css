@@ -1,0 +1,34 @@
+/* 排序按钮 */
+.sort-con{
+	overflow: hidden;
+}
+.sort-con .sort-item{
+	float: left;
+	display: inline-block;
+	position: relative;
+	padding: 0 8px;
+	height: 24px;
+	line-height: 24px;
+	border: 1px solid #ccc;
+	margin-left: -1px;
+	background: #FFFFFF;
+	color: #333;
+	cursor: pointer;
+}
+.sort-con .sort-item.active{
+	background: #C60023;
+	border: 1px solid #C60023;
+	color: #FFFFFF;
+}
+.sort-con .sort-item .fa-sort-desc{
+	/* 添加绝对定位很重要 */
+	position: absolute;
+	top: 8px;
+	right: 8px;
+}
+.sort-con .sort-item.asc .fa-sort-desc{
+	opacity: .6;
+}
+.sort-con .sort-item.desc .fa-sort-asc{
+	opacity: .6;
+}

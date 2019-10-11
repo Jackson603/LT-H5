@@ -1,28 +1,27 @@
 'use strict'
 require('./index.css');
-
-require('@/common/nav-simple/index.js');
 require('@/common/nav/index.js');
 require('@/common/header/index.js');
 var _mm = require('util/mm.js');
-var navSide = require('@/common/nav-side/index.js');
 
-// require('util/swiper/swiper-3.3.1.mm.css');
-// require('util/swiper/swiper-3.3.1.mm.js');
-// var templateBanner = require('./banner.string');
-// 
-// var bannerHtml = _mm.renderHtml(templateBanner);
-// $('.banner-con').html(bannerHtml);
-// 
-// var mySwiper = new Swiper('.swiper-container', {
-// 	autoplay: 2000, //可以选选项，自动滑动
-// 	//手动滑动之后，依然可以自动轮番
-// 	autoplayDisableOnInteraction: false,
-// 	//分页器
-// 	pagination: '.swiper-pagination',
-// 	//环路
-// 	loop:true
-// 	})
+require('util/swiper/swiper-3.3.1.min.css');
+require('util/swiper/swiper-3.3.1.min.js');
+
+ 
+ var templateBanner = require('./banner.string');
+ 
+ var bannerHtml = _mm.renderHtml(templateBanner);
+ $('.banner-con').html(bannerHtml);
+ 
+ var mySwiper = new Swiper('.swiper-container', {
+ 	autoplay: 2000, //可以选选项，自动滑动
+	//手动滑动之后，依然可以自动轮番
+ 	autoplayDisableOnInteraction: false,
+ 	//分页器
+ 	pagination: '.swiper-pagination',
+ 	//环路(不影响自动轮播)
+ 	loop: true
+ 	});
 
 
 
