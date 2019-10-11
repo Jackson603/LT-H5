@@ -1,0 +1,10 @@
+.form-line{
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+}
+.form-line .label{
+	/*内容的宽度  ：inline-block*/
+	display: inline-block;   
+	text-align: center;
+}

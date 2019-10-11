@@ -34,6 +34,7 @@ var _mm = {
 		});
 	},
 	//统一跳转到登录页面
+	//encodeURIComponent函数做了编码处理,解码的时候用decodeURIComponent
 	doLogin: function(){
 		window.location.href = './user-login.html?redirect=' + 
 		encodeURIComponent(window.location.href);
@@ -76,7 +77,7 @@ var _mm = {
 			}
 		if('email'=== type){
 			return /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/.test(value);
-			}
+		}
 	},
 	//统一跳转到登录页面
 	goHome: function(){
