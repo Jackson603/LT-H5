@@ -2,17 +2,18 @@
 
 var _mm = require('util/mm.js');
 
-getProductList: function(listParam , resolve, reject){
-	_mm.require({
-		url: _mm.getServerUrl('./product/list.do'),
-		data: listParam,
-		method: 'POST',
-		success: resolve,
-		error: reject
-	})
+var product = {
+	//1.获取商品列表
+	getProductList: function(listParam, resolve, reject){
+		_mm.request({
+			//获取商品列表
+			url: _mm.getServerUrl('/product/list.do'),
+			data: listParam,
+			method: 'POST',
+			success: resolve,
+			error: reject
+		})
+	}
 }
-var _product = {
 
-}
-
-module.exports = _product;
+module.exports = product;
