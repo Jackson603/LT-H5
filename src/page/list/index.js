@@ -7,7 +7,7 @@ var _mm = require('util/mm.js');
 
 var templateIndex = require('./index.string');
 var _product = require('service/product-service.js');
-// var Pagination = require('util/pagination/index.js');
+var Pagination = require('util/pagination/index.js');
 
 var page ={
 	data: {
@@ -17,7 +17,7 @@ var page ={
 			orderBy: _mm.getUrlParam('orderBy') || 'default',
 			pageNum: _mm.getUrlParam('pageNum') || 1,
 			pageSize: _mm.getUrlParam('pageSize') || 5
-		}
+		},
 	},
 	//初始化
 	init:function(){
@@ -26,6 +26,7 @@ var page ={
 	},
 	//加载数据
 	onLoad: function(){
+		//首次加载列表
 		this.loadList();
 	},
 	//事件绑定
@@ -38,14 +39,13 @@ var page ={
 			//每次点击之后，都应该将页数初始化为1
 			_this.data.listParam.pageNum = 1;
 			//点击默认排序
-			if($this.data('type') === 'default'){
+			if($this.data('type') == 'default'){
 				//已经是active样式
 				if($this.hasClass('active')){
 					return;
 					//其他
 				}else{
-					$this.addClass('active').siblings('.sort-item')
-					.removeClass('active asc desc');
+					$this.addClass('active').siblings('.sort-item').remove('active asc desc');
 					_this.data.listParam.orderBy = 'default';
 				}
 				//点击价格排序
@@ -65,7 +65,7 @@ var page ={
 					 _this.data.listParam.orderBy = 'price_desc';
 				}
 			}
-			//重新加载列表
+			//如果有排序的选择，然后重新加载列表
 			_this.loadList();
 		})
 	},
@@ -101,12 +101,41 @@ var page ={
 					list:res.list
 				});
 				//等加载完毕的时候，再覆盖掉
-				$pListCon.html(listhtml);
-			}, function(){
-				_mm.errorTips();
-		});
+				$pListCon.html(listhtml);	
+				
+				//默认加载分页信息
+				_this.loadPagination({
+					hasPreviousPage : res.hasPreviousPage,
+					prePage : res.prePage,
+					hasNextPage : res.hasNextPage,
+					nextPage:res.nextPage,
+					pageNum : res.pageNum,
+					pages : res.pages
+				});
+			}, function(errMsg){	
+				_mm.errorTips(errMsg);
+				});
+			},
+			//加载分页信息
+		loadPagination:function(pageInfo){
+	
+			
+			var _this = this;
+			this.pagination ? '':(this.pagination = new Pagination());
+			
+			
+			
+			this.pagination.render($.extend({},pageInfo, {
+				container:$('.pagination'),
+				//监听到有选择页面以后才执行
+				onSelectPage: function(pageNum){	
+					//得到的数赋给地址栏
+					_this.data.listParam.pageNum = pageNum;
+					//再次加载相应得页面
+					_this.loadList();
+			}
+		}));		
 	}
-
 }
 
 $(function(){
