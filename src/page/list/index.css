@@ -1,45 +1,43 @@
-/* 排序按钮 */
 .sort-con{
+	/*清浮动(写在父容器上)*/
 	overflow: hidden;
 }
 .sort-con .sort-item{
 	float: left;
-	/* 块级元素可以独占一行，可以设置宽高 */
 	display: inline-block;
 	position: relative;
 	padding: 0 8px;
 	height: 24px;
 	line-height: 24px;
-	border: 1px solid #ccc;
-	margin-left: -1px;
 	background: #FFF;
+	border:1px solid #CCC;
 	color: #333;
 	cursor: pointer;
+}
+.sort-con .sort-item:nth-child(2){
+	margin-left: -1px;
 }
 .sort-con .sort-item.active{
 	background: #C60023;
 	border: 1px solid #C60023;
 	color: #FFF;
 }
-/* desc是[向下符号] */
+/*desc是【向下符号】*/
 .sort-con .sort-item .fa-sort-desc{
-	/* 设置定位会激活left right top bottom等属性 */
-	/* 添加绝对定位很重要 */
+	/*设置定位会激活left  right  top  bottom等属性*/
 	position: absolute;
 	top: 8px;
 	right: 8px;
 }
-/* 当拥有asc这个class的时候，向下符号变成灰色 */
+/*当拥有asc这个class的时候，向下符号变成灰色*/
 .sort-con .sort-item.asc .fa-sort-desc{
 	opacity: .6;
 }
-/* 当拥有desc这个class的时候，向上符号变成灰色 */
+/*当拥有desc这个class的时候，向上符号变成灰色*/
 .sort-con .sort-item.desc .fa-sort-asc{
 	opacity: .6;
 }
-
-/* ============== */
-/* 列表 */
+/*====================*/
 .p-list-con{
 	margin-top: 15px;
 	margin-right: -20px;
@@ -50,22 +48,20 @@
 	width: 180px;
 	float: left;
 	height: 275px;
-	padding: 10px;
 	margin: 0 20px 20px 0;
-	background: #FFFFFF;
+	background: #FFF;
 }
 .p-list-con .p-item .p-img-con{
-	/* 相对定位 */
 	position: relative;
-	width: 100%;
+	width: 180px;
 	height: 200px;
 }
 .p-list-con .p-item .p-img-con .p-img{
-	/* 百分比的写法是父级元素的100% */
+	/*百分比的写法是父级元素的100%*/
 	width: 100%;
 	height: 100%;
 }
-/* =================== */
+/*======================*/
 .p-list-con .p-item .p-price-con{
 	height: 30px;
 	line-height: 30px;
@@ -81,6 +77,52 @@
 .p-list-con .p-item .p-name-con .p-name{
 	line-height: 20px;
 	margin-bottom: 10px;
-	color: #666666;
+	color: #666;
 	text-decoration: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

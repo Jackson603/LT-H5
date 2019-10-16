@@ -45,19 +45,19 @@ var page = {
 			},
 			// 前端字段验证
 			// 表单验证结果
-	validateResult =  _this.validateForm(userInfo);
+			validateResult =  _this.validateForm(userInfo);
 			// 如果前端验证成功
-		if (validateResult.status) {
-			console.log("表单前端验证成功,继续服务端验证...");
-		// 提交数据到服务器
-			_user.updateUserInfo(userInfo, function(res, msg){
-			_mm.successTips(msg);
-				window.location.href = './user-result.html?type=user-center-update';
-			}, function(errMsg){
-			_mm.errorTips(errMsg);
+			if (validateResult.status) {
+				console.log("表单前端验证成功,继续服务端验证...");
+				// 提交数据到服务器
+				_user.updateUserInfo(userInfo, function(res, msg){
+					_mm.successTips(msg);
+					window.location.href = './user-result.html?type=user-center-update'
+				},function(errMsg){
+					_mm.errorTips(errMsg);
 				});
-		}else{
-			_mm.errorTips(validateResult.msg);
+			}else{
+				_mm.errorTips(validateResult.msg);
 			}
 		})
 	},

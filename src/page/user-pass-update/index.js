@@ -11,24 +11,12 @@ var _user = require('service/user-service.js');
 var page = {
 	init: function(){
 		this.onLoad();
-		//加载用户信息
-		this.loadUserInfo();
 		this.bindEvent();
 	},
 	onLoad: function(){
 		//初始化左侧菜单
 		navSide.init({
 			name: 'user-pass-update'
-		})
-	},
-	// 加载用户信息
-	loadUserInfo: function(){
-		var userHtml = ''
-		_user.getUserInfo(function(res){
-			userHtml = _mm.renderHtml(templateIndex, res);
-			$('.panel-body').html(userHtml);
-		}, function(errMsg){
-			_mm.errorTips();
 		})
 	},
 	// 事件绑定
@@ -40,20 +28,20 @@ var page = {
 				password: $.trim($('#password').val()),
 				passwordNew: $.trim($('#password-new').val()),
 				passwordConfirm: $.trim($('#password-confirm').val()),
-			},
+			}
 			// 前端字段验证
 			// 表单验证结果
 			validateResult =  _this.validateForm(userInfo);
 			// 如果前端验证成功
-			if (validateResult.status){
+			if (validateResult.status) {
 				// 更改用户密码
 				_user.updatePassword({
 					passwordOld: userInfo.password,
 					passwordNew: userInfo.passwordNew
 				}, function(res, msg){
 					_mm.successTips(msg);
-					window.location.href = './user-result.html?type=user-pass-update';
-				}, function(errMsg){
+					window.location.href = './user-result.html?type=user-pass-update'
+				},function(errMsg){
 					_mm.errorTips(errMsg);
 				});
 			}else{

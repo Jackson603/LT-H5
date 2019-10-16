@@ -1,9 +1,9 @@
 .header .logo{
-	position: absolute;  /*绝对定位的特征:不占文档流  相对定位，占文档流*/
-	/*position: relative;*/
+	/*绝对定位的特征：不占文档流；相对定位的特征：占文档流*/
+	position: absolute;
 	left: 60px;
 	top: 34px;
-	/*显示成块级元素:独占一行*/
+	/*显示成块级元素：独立占一行*/
 	display: block;
 	font-size: 36px;
 	color: #C60023;
@@ -11,7 +11,7 @@
 	text-decoration: none;
 }
 .header .search-con{
-	/*上----右----下---左*/
+	/*上---右---下---左*/
 	padding: 40px 0 30px 250px;
 }
 .header .search-con .search-input{
@@ -19,7 +19,9 @@
 	height: 40px;
 	line-height: 40px;
 	padding-left: 10px;
+	font-size: 15px;
 	border: 2px solid #C60023;
+	/*去掉蓝色外边框*/
 	outline: none;
 }
 .header .search-con .search-btn{
@@ -32,8 +34,8 @@
 	margin-bottom: 15px;
 	height: 50px;
 	line-height: 50px;
-	background: #EEEEEE;
-	color: #888888;
+	background: #EEE;
+	color: #888;
 	font-size: 14px;
-	border-top: 2px solid #C60023;
+	border-top: 2px solid #c60023;
 }

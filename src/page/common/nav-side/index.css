@@ -3,7 +3,7 @@
 	width: 130px;
 	/*同时具有宽度和高度才不会闪*/
 	min-height: 100px;
-	/*background-color: #0000FF;*/
+	/*background-color: green;*/
 }
 .nav-side .nav-item{
 	height: 25px;
