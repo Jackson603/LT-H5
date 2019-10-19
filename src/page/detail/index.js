@@ -68,7 +68,7 @@ var page = {
 		$pageWrap.html('<div class="loading"></div>');	
 		// 请求商品详情detail信息
 		_product.getProductDetail(this.data.productId, function(res){
-			console.log(res)
+			
 			// 数据的分割处理
 			_this.filter(res);
 			// 缓存一下res中的detail信息

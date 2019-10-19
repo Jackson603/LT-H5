@@ -77,25 +77,27 @@ var page = {
 		//因为keyword和categoryId是共存的，但是我们只需要一个即可
 		// 删除参数中不必要的字段
 		// delete关键字需要在【非严格模式】下执行，严格模式下报错
-		listParam.categoryId ? (delete keyword) : (delete listParam.categoryId);
+		listParam.categoryId ? (delete listParam.keyword) : (delete listParam.categoryId);
 
 		// 请求接口   其中res是服务器响应给我们的信息对象
 		_product.getProductList(listParam, function(res){
 			// 先对数据进行处理，然后再进行渲染
 			for(var i = 0; i < res.list.length; i++){
-				// 如果mainImage的值为空，就把这个元素删除，不显示这件商品
-				if (!res.list[i].mainImage) {
-					res.list.splice(i, 1);
-				}
 				// 添加正则表达式，对非图片后缀的脏数据进行删除
+				//如果mainImage的值为空，那么也将无法匹配成功，也会被删除
 				if (!(/\.(gif|png|jpg|jpeg).??.*$/.test(res.list[i].mainImage))){
-					
 					res.list.splice(i, 1);
 				}
+			}
+			//当数组元素被部分删除之后，数组长度变成了4
+			//如果继续循环五次之后，会因为有一个空元素而导致数组元素而访问
+			for(var i = 0; i < res.list.length; i++){
+				//0 1 2 3 4   0 1 3 4
 				// 对所有的mainImage的字符串进行左斜杠的分割，结果一定是个数组
 				// 如果这个数组的长度为1，则表示是正常的图片名称；如果数组长度大于1，则说明带/
 				// 如果mainImage的字符串中含有/，那么我们如下处理一下，比如：
 				// mainImage: "http://img.happymmall.com/1bc8b355-a937-4227-8921-e13ae2c2198a.jpg"
+				
 				var resultArr = res.list[i].mainImage.split('/')
 				
 				// 如果数组的长度不为1，则表示是不正常的mainImage(带左斜杠/)
@@ -104,6 +106,7 @@ var page = {
 					res.list[i].mainImage = resultArr[resultArr.length - 1]
 				}
 			}
+		
 			// 默认加载分页信息
 			_this.loadPagination({
 				hasPreviousPage : res.hasPreviousPage,

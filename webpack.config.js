@@ -32,8 +32,9 @@ var config = {
 		'user-center-update': './src/page/user-center-update/index.js',
 		'user-pass-reset': './src/page/user-pass-reset/index.js',
 		'user-pass-update': './src/page/user-pass-update/index.js',
-		'detail': './src/page/detail/index.js'
-		
+		'detail': './src/page/detail/index.js',
+		'cart': './src/page/cart/index.js',
+		'order-confirm': './src/page/order-confirm/index.js'
 	},
 	
 	output:{
@@ -93,8 +94,9 @@ var config = {
 		new HtmlWebpackPlugin(getHtmlConfig('user-result', '操作结果')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')),
 		new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')),
-		new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情'))
-
+		new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情')),
+		new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
+		new HtmlWebpackPlugin(getHtmlConfig('order-confirm', '订单确认')),
 	],	
 		
 	resolve: {
