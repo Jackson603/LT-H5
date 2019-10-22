@@ -1,7 +1,7 @@
 'use strict';
 var _mm = require('util/mm.js');
 var _order = {}
-module.exports = _order;
+
 
 var _order = {
 	//获取地址列表
@@ -22,6 +22,6 @@ var _order = {
 			success: resolve,
 			error: reject
 		})
-	}
-	
+	}	
 }
+module.exports = _order;

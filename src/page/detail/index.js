@@ -26,6 +26,7 @@ var page = {
 		// 如果传了productId，加载商品详情页
 		this.loadDetail();
 	},
+	
 	bindEvent: function(){
 		var _this = this;
 		// 图片预览功能
@@ -33,6 +34,7 @@ var page = {
 			var imageUrl = $(this).find('.p-img').attr('src')
 			$('.main-img').attr('src', imageUrl)
 		})
+	
 		// =============
 		// count的操作
 		$(document).on('click', '.p-count-btn', function(){
@@ -47,6 +49,7 @@ var page = {
 				$pCount.val(currCount > minCount ? currCount - 1 : minCount);
 			}
 		})
+	
 		// ==============
 		// 加入购物车
 		$(document).on('click', '.cart-add', function(){
@@ -60,6 +63,7 @@ var page = {
 			})
 		})
 	},
+
 	// 加载商品的详细数据
 	loadDetail: function(){
 		var _this = this,
@@ -79,13 +83,13 @@ var page = {
 			$pageWrap.html('<p class="err-tip">此商品太淘气，找不到了！</p>');	
 		})
 	},
+
 	// 数据的分割处理
 	filter: function(data){
 		// 使用逗号分隔subImages，使之变成数组，并重新定义data下的subImages属性
 		data.subImages = data.subImages.split(',');
 	}
 }
-
 $(function() {
 	page.init();
 })

@@ -34,7 +34,8 @@ var config = {
 		'user-pass-update': './src/page/user-pass-update/index.js',
 		'detail': './src/page/detail/index.js',
 		'cart': './src/page/cart/index.js',
-		'order-confirm': './src/page/order-confirm/index.js'
+		'order-confirm': './src/page/order-confirm/index.js',
+		'payment': './src/page/payment/index.js'
 	},
 	
 	output:{
@@ -97,6 +98,7 @@ var config = {
 		new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情')),
 		new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
 		new HtmlWebpackPlugin(getHtmlConfig('order-confirm', '订单确认')),
+		new HtmlWebpackPlugin(getHtmlConfig('payment', '支付页面'))
 	],	
 		
 	resolve: {
