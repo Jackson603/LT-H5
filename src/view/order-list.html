@@ -18,31 +18,27 @@
       </div>
     </div>
     <!-- ============ -->
-    <div class="page-wrap w">
-	<div class="panel">
-		<h1 class="panel-title">收货地址</h1>
-		<div class="panel-body address-con">
-			<!-- 在这里动态生成收获地址的HTML结构 -->
-		
-		</div>
-		<!-- ======================= -->
-	</div>
-	<!-- ======================= -->
-	<div class="panel">
-		<h1 class="panel-title">商品清单</h1>
-		<div class="panel-body product-con">
-			<!-- 在这里动态生成商品清单的HTML结构 -->
+ <div class="page-wrap w"> 
+	<%= require('html-loader!./layout/nav-side.html')%>
+	<div class="content with-nav">
+	  <div class="panel">
+	    <div class="panel-title">个人中心</div>
+	    <div class="panel-body">
+	     <!-- <div class="loading"></div> -->
+	    <div class="order-list-con">
+			<!-- 商品列表放在这里· -->
 			
-			
-			</div>
+		<!-- ============ -->
 	</div>
-
- <!-- =========================== -->
-	<div class="modal-wrap">
-	 		<!-- 在这里动态生成浮层的HTML结构 -->
+	<div class="pagination">
+		<!-- 分页的容器 -->
+	</div>
+	    </div>
+	  </div>
+	</div>
+ </div>
 	
-	</div>
+ <!-- =========================== -->
     <%= require('html-loader!./layout/footer.html')%>
   </body>
 </html>
-

@@ -1,6 +1,7 @@
 'use strict'
 
-var _mm = require('util/mm.js');''
+var _mm = require('util/mm.js');
+
 var product = {
 	// 1、获取商品列表
 	getProductList: function(listParam, resolve, reject){
