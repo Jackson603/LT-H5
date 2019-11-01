@@ -141,6 +141,8 @@
 	padding: 15px;
 	border-bottom: 1px solid blue;
 	background: cornsilk;
+	/* 背景渐变色 */
+	/* background-image: linear-gradient(to bottom,#B0C4DE, #87CEFA); */
 }
 .modal .modal-container .modal-header .modal-title{
 	font-size: 14px;

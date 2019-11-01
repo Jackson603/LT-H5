@@ -35,7 +35,7 @@ var page = {
 			$listCon = $('.order-list-con');
 		$listCon.html('<div class="loading"></div>');
 		_order.getOrderList(this.data.listParam, function(res){
-			console.log(res)
+			
 			//这是渲染html
 		  orderListHtml = _mm.renderHtml(templateIndex, res);
 		  $listCon.html(orderListHtml);
@@ -55,7 +55,7 @@ var page = {
 	},
 	// =============
 	 // 加载分页信息
-	loadPagination: function(){
+	loadPagination: function(pageInfo){
 		var _this = this;
 		this.pagination ? '' : (this.pagination = new Pagination());
 		this.pagination.render($.extend({},pageInfo,{
